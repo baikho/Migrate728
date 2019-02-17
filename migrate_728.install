@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * My migration's install file.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function migrate_728_uninstall() {
+
+  foreach ([
+    'migrate_728_article',
+    'migrate_728_comment',
+    'migrate_728_tag',
+    'migrate_728_user',
+    'migrate_728_vocabulary',
+  ] as $migration) {
+    \Drupal::configFactory()
+      ->getEditable('migrate_plus.migration.' . $migration)
+      ->delete();
+  }
+
+}

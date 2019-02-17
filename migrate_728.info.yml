@@ -1,0 +1,9 @@
+name: Migrate 728
+type: module
+description: 'Drupal 7 to 8 migration example.'
+package: Migration
+core: '8.x'
+dependencies:
+  - migrate:migrate
+  - migrate_plus:migrate_plus
+  - migrate_tools:migrate_tools
